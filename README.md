@@ -14,14 +14,14 @@ To retrain the system, first download enough image using img_dl.py in the follow
 *tf_images/ladies_shoes*, *tf_images/men_shoes*, *tf_images/children_shoes*. The sub-directory name is important. Because sub directory name will be the class name for the images inside that directory.
 
 To start the retrain, run the following command:
-`python image_retraining/retrain.py --bottleneck_dir=tf_files/bottlenecks --how_many_training_steps 500 --model_dir=tf_files/inception --output_graph=tf_files/retrained_graph.pb --output_labels=tf_files/retrained_labels.txt --image_dir=tf_images`
+```python image_retraining/retrain.py --bottleneck_dir=tf_files/bottlenecks --how_many_training_steps 500 --model_dir=tf_files/inception --output_graph=tf_files/retrained_graph.pb --output_labels=tf_files/retrained_labels.txt --image_dir=tf_images```
 
 If everything goes well, you will see the training accuracy in command line.
 
 Now, the moment of truth :)
 
 Download some random shoes images from the Internet and test how well trained is your shoes classifier is:
-`python label_image.py test_images/ladies_shoes_with_feet.jpg`
+```python label_image.py test_images/ladies_shoes_with_feet.jpg```
 
 It gave me quite perfect result:
 ```
